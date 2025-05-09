@@ -237,7 +237,7 @@
     <!-- /Why Us Section -->
 
     <!-- Menu Section -->
-
+     
     <section id="menu" class="menu section">
 
       <!-- Section Title -->
@@ -804,8 +804,7 @@
             
             var mensaje = `Reservación:\nNombre: ${nombre}\nFecha: ${fecha}\nHora: ${hora}\nPersonas: ${personas}`;
             
-            var numeros = "50683349057"
-            var numeros = "50684008867"// Lista de números de WhatsApp destino
+            var numeros = ["50684008867", "50683349057"]; // Lista de números de WhatsApp destino
             
             numeros.forEach(function(numero) {
                 var url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
