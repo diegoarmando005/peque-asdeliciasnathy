@@ -796,22 +796,26 @@
         }
     </style>
     <script>
-        function enviarWhatsApp() {
-            var nombre = document.getElementById("nombre").value;
-            var fecha = document.getElementById("fecha").value;
-            var hora = document.getElementById("hora").value;
-            var personas = document.getElementById("personas").value;
-            
-            var mensaje = `Reservación:\nNombre: ${nombre}\nFecha: ${fecha}\nHora: ${hora}\nPersonas: ${personas}`;
-            
-            var numeros = ["50684008867", "50683349057"]; // Lista de números de WhatsApp destino
-            
-            numeros.forEach(function(numero) {
-                var url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-                window.open(url, "_blank");
-            });
-        }
-    </script>
+      function enviarWhatsApp() {
+          var nombre = document.getElementById("nombre").value;
+          var fecha = document.getElementById("fecha").value;
+          var hora = document.getElementById("hora").value;
+          var personas = document.getElementById("personas").value;
+          
+          var mensaje = `Reservación:\nNombre: ${nombre}\nFecha: ${fecha}\nHora: ${hora}\nPersonas: ${personas}`;
+          
+          var numeros = ["50684008867", "50683349057"]; // Lista de números de WhatsApp destino
+  
+          // Enviar los mensajes con un pequeño retraso
+          numeros.forEach(function(numero, index) {
+              setTimeout(function() {
+                  var url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+                  window.open(url, "_blank");
+              }, index * 1000); // Se abre el segundo mensaje después de 1 segundo
+          });
+      }
+  </script>
+  
 </head>
 <body>
     <h2>Encargue su pedido</h2>
